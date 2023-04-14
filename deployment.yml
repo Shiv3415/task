@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shiv
+spec:
+  selector:
+    matchLabels:
+      app: shiv
+  template:
+    metadata:
+      labels:
+        app: shiv
+    spec:
+      containers:
+      - name: shivcon 
+        image: shiv3415/image123:1.0
+
+---
+
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: shiv
+spec:
+  type: NodePort
+  selector:
+    app: shiv
+  ports:
+  - port: 3000
+    targetPort: 3000
+
