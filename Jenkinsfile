@@ -20,7 +20,7 @@ pipeline {
         }
         stage('DEPLOY') {
             steps {
-                kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfigid', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                kubernetesDeploy configs: '/home/ubuntu/task/deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfigid', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
             }
             
         }
